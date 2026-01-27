@@ -1,0 +1,15 @@
+# --- Bibliotecas Base ---
+numpy
+pandas
+matplotlib
+
+# --- Bioinformática e Quioinformática ---
+biopython
+rdkit
+prolif
+plip
+
+# --- Utilidades ---
+requests
+pyyaml
+lxml
