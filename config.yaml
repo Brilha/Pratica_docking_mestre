@@ -1,0 +1,164 @@
+# =============================================================================
+# CONFIGURAÇÃO MESTRE - Virtual Screening Pipeline
+# =============================================================================
+
+# Alvos proteicos para triagem (usar nome do arquivo local sem extensão)
+targets:
+  - mapk
+  - pdrk
+
+# ✅ NOVO: Proteínas humanas de referência (em templates/proteinas_humanas/)
+# Usadas para análise de seletividade (verificar se droga é tóxica)
+human_proteins:
+  - human_mapk_reference       # Exemplo: sua proteína humana MAPK
+  # - human_pdrk_reference     # Descomente se tiver
+
+# Fármacos candidatos (usar nomes em Inglês para PubChem)
+drugs:
+  - Iprodione
+  - Fludioxonil
+  - pepstatin_3D_minimizado
+
+# Parâmetros de Docking
+docking:
+  grid_size: 20              # Tamanho do GridBox em Ångströms
+  vina_executable: vina      # Caminho ou nome executável do Vina
+  cpu_count: 4               # CPUs para paralelização (se aplicável)
+  timeout_seconds: 600       # Timeout para operações longas
+
+# Paths
+paths:
+  output_dir: ./screening_results
+  temp_dir: ./temp
+  log_dir: ./logs
+
+# Logging
+logging:
+  level: INFO                # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s"
+  file_prefix: screening     # Logs serão: screening_YYYYMMDD_HHMMSS.log
+
+# Dependências requeridas
+dependencies:
+  - vina
+  - obabel
+  - plip
+
+# Pipeline: Passos a executar (em ordem)
+pipeline_steps:
+  - name: "preparacao"
+    script: "preparar_arquivosuniversal.py"
+    description: "Limpeza e conversão PDBQT"
+    required_input_files:
+      - "{target}.pdb"
+      - "{drug}.sdf"
+    expected_output_files:
+      - "receptor.pdbqt"
+      - "ligante.pdbqt"
+
+  - name: "gridbox"
+    script: "definir_gridbox.py"
+    description: "Calculando coordenadas do sítio ativo"
+    required_input_files:
+      - "receptor.pdbqt"
+    expected_output_files:
+      - "config.txt"
+    fallback_on_missing: "grid_cego"
+
+  - name: "grid_cego"
+    script: "definir_grid_cego.py"
+    description: "Blind docking - cobre proteína toda (fallback se gridbox falhar)"
+    required_input_files:
+      - "receptor.pdbqt"
+    expected_output_files:
+      - "config.txt"
+    skip_if_missing: false
+
+  - name: "docking"
+    script: null
+    executable: "vina"
+    description: "Simulação de encaixe molecular (Vina)"
+    required_input_files:
+      - "config.txt"
+      - "ligante.pdbqt"
+    expected_output_files:
+      - "resultado_docking.pdbqt"
+    log_file: "log_docking.txt"
+
+  - name: "quimica"
+    script: "analise_quimica_completa.py"
+    description: "Avaliação de propriedades de fármaco"
+    required_input_files:
+      - "{drug}.sdf"
+    expected_output_files: []
+    skip_if_missing: true
+
+  - name: "plip"
+    script: "analisar_interacoes.py"
+    description: "Mapeamento de interações atômicas (PLIP)"
+    required_input_files:
+      - "resultado_docking.pdbqt"
+    skip_if_missing: true
+
+  - name: "prolif"
+    script: "interacao_2d_prolif.py"
+    description: "Diagrama interativo ProLIF"
+    required_input_files:
+      - "complexo_final.pdb"
+    skip_if_missing: true
+
+  - name: "relatorio"
+    script: "gerar_relatorio_final.py"
+    description: "Compilação do relatório final"
+    expected_output_files:
+      - "relatorio_final.html"
+
+# ✅ NOVO: Scripts opcionais (pergunta ao usuário se quer rodar)
+optional_steps:
+  - name: "refinar_grid"
+    script: "refinar_grid_focado.py"
+    description: "Refina grid após blind docking para maior precisão"
+    category: "advanced"
+    required_input_files:
+      - "resultado_docking.pdbqt"
+
+  - name: "seletividade"
+    script: "check_seletividadeuniversal.py"
+    description: "Verifica seletividade da proteína contra alvos similares"
+    category: "analysis"
+
+  - name: "motivos"
+    script: "buscar_motivo.py"
+    description: "Busca motivos estruturais conservados na proteína"
+    category: "analysis"
+
+  - name: "colorir"
+    script: "cor_pdb_seletividade.py"
+    description: "Colore PDB por seletividade para visualização"
+    category: "visualization"
+
+  - name: "proximidade"
+    script: "medir_proximidade.py"
+    description: "Mede distâncias atômicas críticas no complexo"
+    category: "analysis"
+
+  - name: "limpar"
+    script: "limpar_experimento.py"
+    description: "Limpa arquivos temporários e de cache"
+    category: "cleanup"
+  # ✅ NOVO: Análise de Seletividade com Proteína Humana
+  - name: "seletividade_humana"
+    script: "check_seletividadeuniversal.py"
+    description: "Compara com proteína humana via BLAST (verifica toxicidade)"
+    category: "selectivity"
+    required_input_files:
+      - "receptor.pdb"
+    skip_if_missing: true
+
+  - name: "colorir_seletividade"
+    script: "cor_pdb_seletividade.py"
+    description: "Colore PDB por B-factor (similaridade humana)"
+    category: "selectivity"
+    required_input_files:
+      - "receptor_clean.pdb"
+    skip_if_missing: true
