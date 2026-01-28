@@ -1,0 +1,35 @@
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] 🔍 VERIFICANDO DEPENDÊNCIAS
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: vina
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: obabel
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: plip
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ✅ Todas as dependências validadas!
+
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] 📋 Alvos: ['mapk', 'pdrk']
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] 💊 Drogas: ['Iprodione', 'Fludioxonil', 'pepstatin_3D_minimizado']
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] 📊 Total de combinações: 6
+
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Iprodione
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ⬇️  Tentando baixar mapk do RCSB PDB...
+[2026-01-27 18:15:10] [VirtualScreening] [ERROR] ❌ Erro fatal: run_subprocess() got an unexpected keyword argument 'input'
+Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/virtual_screening_mestre.py", line 241, in <module>
+    if rodar_pipeline(alvo, droga, config):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/bioinformatica/codigos_mestres/virtual_screening_mestre.py", line 145, in rodar_pipeline
+    if not preparar_pasta_alvo(alvo, droga, config):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/bioinformatica/codigos_mestres/virtual_screening_mestre.py", line 73, in preparar_pasta_alvo
+    result = run_subprocess(
+             ^^^^^^^^^^^^^^^
+TypeError: run_subprocess() got an unexpected keyword argument 'input'
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] 🏁 TRIAGEM FINALIZADA
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ✅ Sucesso: 0
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ❌ Falhas: 0
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ⏱️  Tempo total: 0.0s
+[2026-01-27 18:15:10] [VirtualScreening] [INFO] ======================================================================

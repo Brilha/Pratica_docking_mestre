@@ -1,0 +1,8 @@
+[2026-01-27 18:14:03] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:14:03] [VirtualScreening] [INFO] 🔍 VERIFICANDO DEPENDÊNCIAS
+[2026-01-27 18:14:03] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:14:03] [VirtualScreening] [ERROR] ❌ Ferramenta não encontrada: vina
+[2026-01-27 18:14:03] [VirtualScreening] [ERROR] ❌ Ferramenta não encontrada: obabel
+[2026-01-27 18:14:03] [VirtualScreening] [ERROR] ❌ Ferramenta não encontrada: plip
+[2026-01-27 18:14:03] [VirtualScreening] [ERROR] ❌ Ferramentas ausentes: ['vina', 'obabel', 'plip']
+[2026-01-27 18:14:03] [VirtualScreening] [ERROR] Instale as dependências e tente novamente.

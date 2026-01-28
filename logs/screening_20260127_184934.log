@@ -1,0 +1,469 @@
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 🔍 VERIFICANDO DEPENDÊNCIAS
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: vina
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: obabel
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: plip
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Todas as dependências validadas!
+
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 📋 Alvos: ['mapk', 'pdrk']
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 💊 Drogas: ['Iprodione', 'Fludioxonil', 'pepstatin_3D_minimizado']
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 📊 Total de combinações: 6
+
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 📋 SCRIPTS OPCIONAIS DISPONÍVEIS
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Scripts opcionais DESATIVADOS
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Iprodione
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Iprodione/mapk.pdb
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 🔍 Buscando ligante Iprodione...
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Iprodione.sdf
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Iprodione.sdf → screening_results/mapk_Iprodione/Iprodione.sdf
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Iprodione
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.5s
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_Iprodione/config.txt']
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] [grid_cego] Arquivos de saída não foram criados: ['screening_results/mapk_Iprodione/config.txt']
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] [grid_cego] ❌ Validação de saída falhou
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/config.txt']
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:49:34] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:49:34] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py screening_results/mapk_Iprodione
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 93, in <module>
+    analisar_molecula(arquivo_input)
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 10, in analisar_molecula
+    suppl = Chem.SDMolSupplier(sdf_path, sanitize=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: File error: Invalid input file screening_results/mapk_Iprodione
+
+[2026-01-27 18:49:35] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:49:35] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/resultado_docking.pdbqt']
+[2026-01-27 18:49:35] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/complexo_final.pdb']
+[2026-01-27 18:49:35] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Fludioxonil
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Fludioxonil/mapk.pdb
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 🔍 Buscando ligante Fludioxonil...
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Fludioxonil.sdf
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Fludioxonil.sdf → screening_results/mapk_Fludioxonil/Fludioxonil.sdf
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Fludioxonil
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.5s
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 18:49:35] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_Fludioxonil/config.txt']
+[2026-01-27 18:49:35] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 18:49:35] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 18:49:35] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] [grid_cego] Arquivos de saída não foram criados: ['screening_results/mapk_Fludioxonil/config.txt']
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] [grid_cego] ❌ Validação de saída falhou
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/config.txt']
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py screening_results/mapk_Fludioxonil
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 93, in <module>
+    analisar_molecula(arquivo_input)
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 10, in analisar_molecula
+    suppl = Chem.SDMolSupplier(sdf_path, sanitize=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: File error: Invalid input file screening_results/mapk_Fludioxonil
+
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:49:36] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/resultado_docking.pdbqt']
+[2026-01-27 18:49:36] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/complexo_final.pdb']
+[2026-01-27 18:49:36] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] Preparando pasta para: mapk vs pepstatin_3D_minimizado
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_pepstatin_3D_minimizado/mapk.pdb
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 🔍 Buscando ligante pepstatin_3D_minimizado...
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: pepstatin_3D_minimizado.sdf
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/pepstatin_3D_minimizado.sdf → screening_results/mapk_pepstatin_3D_minimizado/pepstatin_3D_minimizado.sdf
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_pepstatin_3D_minimizado
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:49:36] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.7s
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] [grid_cego] Arquivos de saída não foram criados: ['screening_results/mapk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] [grid_cego] ❌ Validação de saída falhou
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 93, in <module>
+    analisar_molecula(arquivo_input)
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 10, in analisar_molecula
+    suppl = Chem.SDMolSupplier(sdf_path, sanitize=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: File error: Invalid input file screening_results/mapk_pepstatin_3D_minimizado
+
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:49:37] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/resultado_docking.pdbqt']
+[2026-01-27 18:49:37] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/complexo_final.pdb']
+[2026-01-27 18:49:37] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] Preparando pasta para: pdrk vs Iprodione
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 🔍 Buscando proteína pdrk...
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: pdrk.pdb
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/pdrk.pdb → screening_results/pdrk_Iprodione/pdrk.pdb
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 🔍 Buscando ligante Iprodione...
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Iprodione.sdf
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Iprodione.sdf → screening_results/pdrk_Iprodione/Iprodione.sdf
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/pdrk_Iprodione
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:49:37] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.7s
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/pdrk_Iprodione/config.txt']
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] [grid_cego] Arquivos de saída não foram criados: ['screening_results/pdrk_Iprodione/config.txt']
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] [grid_cego] ❌ Validação de saída falhou
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/config.txt']
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:49:38] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:49:38] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py screening_results/pdrk_Iprodione
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 93, in <module>
+    analisar_molecula(arquivo_input)
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 10, in analisar_molecula
+    suppl = Chem.SDMolSupplier(sdf_path, sanitize=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: File error: Invalid input file screening_results/pdrk_Iprodione
+
+[2026-01-27 18:49:39] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:49:39] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/resultado_docking.pdbqt']
+[2026-01-27 18:49:39] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/complexo_final.pdb']
+[2026-01-27 18:49:39] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] Preparando pasta para: pdrk vs Fludioxonil
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 🔍 Buscando proteína pdrk...
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: pdrk.pdb
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/pdrk.pdb → screening_results/pdrk_Fludioxonil/pdrk.pdb
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 🔍 Buscando ligante Fludioxonil...
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Fludioxonil.sdf
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Fludioxonil.sdf → screening_results/pdrk_Fludioxonil/Fludioxonil.sdf
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/pdrk_Fludioxonil
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.7s
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:49:39] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/pdrk_Fludioxonil/config.txt']
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] [grid_cego] Arquivos de saída não foram criados: ['screening_results/pdrk_Fludioxonil/config.txt']
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] [grid_cego] ❌ Validação de saída falhou
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/config.txt']
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py screening_results/pdrk_Fludioxonil
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 93, in <module>
+    analisar_molecula(arquivo_input)
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 10, in analisar_molecula
+    suppl = Chem.SDMolSupplier(sdf_path, sanitize=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: File error: Invalid input file screening_results/pdrk_Fludioxonil
+
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:49:40] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/resultado_docking.pdbqt']
+[2026-01-27 18:49:40] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/complexo_final.pdb']
+[2026-01-27 18:49:40] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] Preparando pasta para: pdrk vs pepstatin_3D_minimizado
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 🔍 Buscando proteína pdrk...
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: pdrk.pdb
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/pdrk.pdb → screening_results/pdrk_pepstatin_3D_minimizado/pdrk.pdb
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 🔍 Buscando ligante pepstatin_3D_minimizado...
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: pepstatin_3D_minimizado.sdf
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/pepstatin_3D_minimizado.sdf → screening_results/pdrk_pepstatin_3D_minimizado/pepstatin_3D_minimizado.sdf
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/pdrk_pepstatin_3D_minimizado
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:49:40] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.9s
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/pdrk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] [grid_cego] Arquivos de saída não foram criados: ['screening_results/pdrk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] [grid_cego] ❌ Validação de saída falhou
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:49:41] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:49:41] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py screening_results/pdrk_pepstatin_3D_minimizado
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 93, in <module>
+    analisar_molecula(arquivo_input)
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/analise/analise_quimica_completa.py", line 10, in analisar_molecula
+    suppl = Chem.SDMolSupplier(sdf_path, sanitize=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: File error: Invalid input file screening_results/pdrk_pepstatin_3D_minimizado
+
+[2026-01-27 18:49:42] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:49:42] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/resultado_docking.pdbqt']
+[2026-01-27 18:49:42] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/complexo_final.pdb']
+[2026-01-27 18:49:42] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.1s
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] 🏁 TRIAGEM FINALIZADA
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ✅ Sucesso: 0
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ❌ Falhas: 6
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ⏱️  Tempo total: 8.1s
+[2026-01-27 18:49:42] [VirtualScreening] [INFO] ======================================================================

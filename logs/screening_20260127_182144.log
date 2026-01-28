@@ -1,0 +1,440 @@
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 VERIFICANDO DEPENDÊNCIAS
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: vina
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: obabel
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: plip
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Todas as dependências validadas!
+
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 📋 Alvos: ['mapk', 'pdrk']
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 💊 Drogas: ['Iprodione', 'Fludioxonil', 'pepstatin_3D_minimizado']
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 📊 Total de combinações: 6
+
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Iprodione
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Iprodione/mapk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando ligante Iprodione...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Iprodione.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Iprodione.sdf → screening_results/mapk_Iprodione/Iprodione.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Iprodione
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 preparar_arquivosuniversal.py screening_results/mapk_Iprodione
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/preparar_arquivosuniversal.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [preparacao] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: preparacao
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [gridbox] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/receptor.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [gridbox] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [grid_cego] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/receptor.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [grid_cego] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/config.txt', 'screening_results/mapk_Iprodione/ligante.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 analise_quimica_completa.py screening_results/mapk_Iprodione
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/analise_quimica_completa.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/resultado_docking.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/mapk_Iprodione/complexo_final.pdb']
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 gerar_relatorio_final.py screening_results/mapk_Iprodione
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/gerar_relatorio_final.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [relatorio] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: relatorio
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Fludioxonil
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Fludioxonil/mapk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando ligante Fludioxonil...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Fludioxonil.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Fludioxonil.sdf → screening_results/mapk_Fludioxonil/Fludioxonil.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Fludioxonil
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 preparar_arquivosuniversal.py screening_results/mapk_Fludioxonil
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/preparar_arquivosuniversal.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [preparacao] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: preparacao
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [gridbox] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/receptor.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [gridbox] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [grid_cego] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/receptor.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [grid_cego] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/config.txt', 'screening_results/mapk_Fludioxonil/ligante.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 analise_quimica_completa.py screening_results/mapk_Fludioxonil
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/analise_quimica_completa.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/resultado_docking.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/complexo_final.pdb']
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 gerar_relatorio_final.py screening_results/mapk_Fludioxonil
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/gerar_relatorio_final.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [relatorio] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: relatorio
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Preparando pasta para: mapk vs pepstatin_3D_minimizado
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_pepstatin_3D_minimizado/mapk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando ligante pepstatin_3D_minimizado...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: pepstatin_3D_minimizado.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/pepstatin_3D_minimizado.sdf → screening_results/mapk_pepstatin_3D_minimizado/pepstatin_3D_minimizado.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_pepstatin_3D_minimizado
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 preparar_arquivosuniversal.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/preparar_arquivosuniversal.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [preparacao] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: preparacao
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [gridbox] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/receptor.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [gridbox] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [grid_cego] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/receptor.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [grid_cego] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/config.txt', 'screening_results/mapk_pepstatin_3D_minimizado/ligante.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 analise_quimica_completa.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/analise_quimica_completa.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/resultado_docking.pdbqt']
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/complexo_final.pdb']
+[2026-01-27 18:21:44] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] Comando falhou: python3 gerar_relatorio_final.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/gerar_relatorio_final.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] [relatorio] ❌ Execução falhou
+[2026-01-27 18:21:44] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: relatorio
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Preparando pasta para: pdrk vs Iprodione
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando proteína pdrk...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: pdrk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/pdrk.pdb → screening_results/pdrk_Iprodione/pdrk.pdb
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 🔍 Buscando ligante Iprodione...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Iprodione.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Iprodione.sdf → screening_results/pdrk_Iprodione/Iprodione.sdf
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/pdrk_Iprodione
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:21:44] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 preparar_arquivosuniversal.py screening_results/pdrk_Iprodione
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/preparar_arquivosuniversal.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [preparacao] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: preparacao
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [gridbox] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/receptor.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [gridbox] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [grid_cego] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/receptor.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [grid_cego] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/config.txt', 'screening_results/pdrk_Iprodione/ligante.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 analise_quimica_completa.py screening_results/pdrk_Iprodione
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/analise_quimica_completa.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/resultado_docking.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/pdrk_Iprodione/complexo_final.pdb']
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 gerar_relatorio_final.py screening_results/pdrk_Iprodione
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/gerar_relatorio_final.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [relatorio] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: relatorio
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] Preparando pasta para: pdrk vs Fludioxonil
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 🔍 Buscando proteína pdrk...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: pdrk.pdb
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/pdrk.pdb → screening_results/pdrk_Fludioxonil/pdrk.pdb
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 🔍 Buscando ligante Fludioxonil...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Fludioxonil.sdf
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Fludioxonil.sdf → screening_results/pdrk_Fludioxonil/Fludioxonil.sdf
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/pdrk_Fludioxonil
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 preparar_arquivosuniversal.py screening_results/pdrk_Fludioxonil
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/preparar_arquivosuniversal.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [preparacao] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: preparacao
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [gridbox] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/receptor.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [gridbox] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [grid_cego] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/receptor.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [grid_cego] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/config.txt', 'screening_results/pdrk_Fludioxonil/ligante.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 analise_quimica_completa.py screening_results/pdrk_Fludioxonil
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/analise_quimica_completa.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/resultado_docking.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/pdrk_Fludioxonil/complexo_final.pdb']
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 gerar_relatorio_final.py screening_results/pdrk_Fludioxonil
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/gerar_relatorio_final.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [relatorio] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: relatorio
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] Preparando pasta para: pdrk vs pepstatin_3D_minimizado
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 🔍 Buscando proteína pdrk...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: pdrk.pdb
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/pdrk.pdb → screening_results/pdrk_pepstatin_3D_minimizado/pdrk.pdb
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 🔍 Buscando ligante pepstatin_3D_minimizado...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: pepstatin_3D_minimizado.sdf
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/pepstatin_3D_minimizado.sdf → screening_results/pdrk_pepstatin_3D_minimizado/pepstatin_3D_minimizado.sdf
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/pdrk_pepstatin_3D_minimizado
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 preparar_arquivosuniversal.py screening_results/pdrk_pepstatin_3D_minimizado
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/preparar_arquivosuniversal.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [preparacao] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: preparacao
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [gridbox] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/receptor.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [gridbox] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [grid_cego] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/receptor.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [grid_cego] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: grid_cego
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [docking] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/config.txt', 'screening_results/pdrk_pepstatin_3D_minimizado/ligante.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [docking] ❌ Inputs inválidos. Abortando.
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: docking
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 analise_quimica_completa.py screening_results/pdrk_pepstatin_3D_minimizado
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/analise_quimica_completa.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [quimica] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: quimica
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [plip] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/resultado_docking.pdbqt']
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [plip] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [prolif] Arquivos de entrada ausentes: ['screening_results/pdrk_pepstatin_3D_minimizado/complexo_final.pdb']
+[2026-01-27 18:21:45] [VirtualScreening] [WARNING] [prolif] ⏭️  Pulando: Arquivos de entrada ausentes
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] Comando falhou: python3 gerar_relatorio_final.py screening_results/pdrk_pepstatin_3D_minimizado
+Erro: python3: can't open file '/home/brilha/bioinformatica/codigos_mestres/screening_results/gerar_relatorio_final.py': [Errno 2] No such file or directory
+
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] [relatorio] ❌ Execução falhou
+[2026-01-27 18:21:45] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: relatorio
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] 🏁 TRIAGEM FINALIZADA
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ✅ Sucesso: 0
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ❌ Falhas: 6
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ⏱️  Tempo total: 0.2s
+[2026-01-27 18:21:45] [VirtualScreening] [INFO] ======================================================================

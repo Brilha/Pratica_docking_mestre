@@ -1,0 +1,14 @@
+receptor = receptor.pdbqt
+ligand = ligante.pdbqt
+
+center_x = -59.543
+center_y = 35.587
+center_z = 85.862
+
+size_x = 182.497
+size_y = 60.504
+size_z = 193.938
+
+exhaustiveness = 16
+num_modes = 9
+energy_range = 3

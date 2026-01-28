@@ -1,0 +1,549 @@
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] 🔍 VERIFICANDO DEPENDÊNCIAS
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: vina
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: obabel
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: plip
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] ✅ Todas as dependências validadas!
+
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] 📋 Alvos disponíveis: ['mapk', 'pdrk']
+[2026-01-27 19:21:15] [VirtualScreening] [INFO] 💊 Fármacos disponíveis: ['Iprodione', 'Fludioxonil', 'pepstatin_3D_minimizado']
+
+[2026-01-27 19:21:29] [VirtualScreening] [INFO] ✅ 1 alvo(s) SELECIONADO(S): ['mapk']
+[2026-01-27 19:21:39] [VirtualScreening] [INFO] ✅ 3 fármaco(s) SELECIONADO(S): ['Iprodione', 'Fludioxonil', 'pepstatin_3D_minimizado']
+[2026-01-27 19:21:39] [VirtualScreening] [INFO] 📊 Total de combinações a executar: 3
+[2026-01-27 19:21:39] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:39] [VirtualScreening] [INFO] 📋 SCRIPTS OPCIONAIS DISPONÍVEIS
+[2026-01-27 19:21:39] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ✅ Todos os scripts opcionais ATIVADOS
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Iprodione
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Iprodione/mapk.pdb
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 🔍 Buscando ligante Iprodione...
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Iprodione.sdf
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Iprodione.sdf → screening_results/mapk_Iprodione/Iprodione.sdf
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Iprodione
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: refinar_grid
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: seletividade
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: motivos
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: colorir
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: proximidade
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: limpar
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 19:21:45] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.5s
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 19:21:46] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_Iprodione/config.txt']
+[2026-01-27 19:21:46] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 19:21:46] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [grid_cego] ✅ Arquivos de saída validados
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [grid_cego] ⏱️  Tempo: 0.1s
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 19:21:46] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [docking] ✅ Execução concluída
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [docking] ✅ Arquivos de saída validados
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [docking] ⏱️  Tempo: 6.9s
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [quimica] ✅ Execução concluída
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [quimica] ⏱️  Tempo: 0.2s
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 19:21:53] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [plip] ✅ Execução concluída
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [plip] ⏱️  Tempo: 0.5s
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [prolif] ✅ Execução concluída
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [prolif] ⏱️  Tempo: 0.6s
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] [refinar_grid] Refina grid após blind docking para maior precisão
+[2026-01-27 19:21:54] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [refinar_grid] ✅ Execução concluída
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [refinar_grid] ⏱️  Tempo: 0.2s
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [seletividade] Verifica seletividade da proteína contra alvos similares
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [seletividade] ✅ Execução concluída
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [seletividade] ⏱️  Tempo: 0.5s
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [motivos] Busca motivos estruturais conservados na proteína
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [motivos] ✅ Execução concluída
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [motivos] ⏱️  Tempo: 0.2s
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] [colorir] Colore PDB por seletividade para visualização
+[2026-01-27 19:21:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py screening_results/mapk_Iprodione
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py", line 141, in <module>
+    structure = parser.get_structure("temp", pdb_input)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: 'screening_results/mapk_Iprodione'
+
+[2026-01-27 19:21:56] [VirtualScreening] [ERROR] [colorir] ❌ Execução falhou
+[2026-01-27 19:21:56] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: colorir
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [proximidade] Mede distâncias atômicas críticas no complexo
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [proximidade] ✅ Execução concluída
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [proximidade] ⏱️  Tempo: 0.2s
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [limpar] Limpa arquivos temporários e de cache
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [limpar] ✅ Execução concluída
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [limpar] ⏱️  Tempo: 0.0s
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ✅ Análise completada com sucesso para mapk vs Iprodione
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Fludioxonil
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Fludioxonil/mapk.pdb
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 🔍 Buscando ligante Fludioxonil...
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Fludioxonil.sdf
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Fludioxonil.sdf → screening_results/mapk_Fludioxonil/Fludioxonil.sdf
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Fludioxonil
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: refinar_grid
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: seletividade
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: motivos
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: colorir
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: proximidade
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: limpar
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.4s
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 19:21:56] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_Fludioxonil/config.txt']
+[2026-01-27 19:21:56] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 19:21:56] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [grid_cego] ✅ Arquivos de saída validados
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [grid_cego] ⏱️  Tempo: 0.1s
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 19:21:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [docking] ✅ Execução concluída
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [docking] ✅ Arquivos de saída validados
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [docking] ⏱️  Tempo: 6.4s
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [quimica] ✅ Execução concluída
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [quimica] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 19:22:03] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [plip] ✅ Execução concluída
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [plip] ⏱️  Tempo: 0.6s
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [prolif] ✅ Execução concluída
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [prolif] ⏱️  Tempo: 0.7s
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] [refinar_grid] Refina grid após blind docking para maior precisão
+[2026-01-27 19:22:04] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [refinar_grid] ✅ Execução concluída
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [refinar_grid] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [seletividade] Verifica seletividade da proteína contra alvos similares
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [seletividade] ✅ Execução concluída
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [seletividade] ⏱️  Tempo: 0.5s
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [motivos] Busca motivos estruturais conservados na proteína
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [motivos] ✅ Execução concluída
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [motivos] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [colorir] Colore PDB por seletividade para visualização
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py screening_results/mapk_Fludioxonil
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py", line 141, in <module>
+    structure = parser.get_structure("temp", pdb_input)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: 'screening_results/mapk_Fludioxonil'
+
+[2026-01-27 19:22:05] [VirtualScreening] [ERROR] [colorir] ❌ Execução falhou
+[2026-01-27 19:22:05] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: colorir
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] [proximidade] Mede distâncias atômicas críticas no complexo
+[2026-01-27 19:22:05] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [proximidade] ✅ Execução concluída
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [proximidade] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [limpar] Limpa arquivos temporários e de cache
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [limpar] ✅ Execução concluída
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [limpar] ⏱️  Tempo: 0.0s
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [refinar_grid] Refina grid após blind docking para maior precisão
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [WARNING] [refinar_grid] Arquivos de entrada ausentes: ['screening_results/mapk_Fludioxonil/resultado_docking.pdbqt']
+[2026-01-27 19:22:06] [VirtualScreening] [ERROR] [refinar_grid] ❌ Inputs inválidos. Abortando.
+[2026-01-27 19:22:06] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: refinar_grid
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [seletividade] Verifica seletividade da proteína contra alvos similares
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [seletividade] ✅ Execução concluída
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [seletividade] ⏱️  Tempo: 0.5s
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [motivos] Busca motivos estruturais conservados na proteína
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [motivos] ✅ Execução concluída
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [motivos] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] [colorir] Colore PDB por seletividade para visualização
+[2026-01-27 19:22:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:07] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py screening_results/mapk_Fludioxonil
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py", line 141, in <module>
+    structure = parser.get_structure("temp", pdb_input)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: 'screening_results/mapk_Fludioxonil'
+
+[2026-01-27 19:22:07] [VirtualScreening] [ERROR] [colorir] ❌ Execução falhou
+[2026-01-27 19:22:07] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: colorir
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [proximidade] Mede distâncias atômicas críticas no complexo
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [proximidade] ✅ Execução concluída
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [proximidade] ⏱️  Tempo: 0.2s
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [limpar] Limpa arquivos temporários e de cache
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [limpar] ✅ Execução concluída
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [limpar] ⏱️  Tempo: 0.0s
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ✅ Análise completada com sucesso para mapk vs Fludioxonil
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] Preparando pasta para: mapk vs pepstatin_3D_minimizado
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_pepstatin_3D_minimizado/mapk.pdb
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 🔍 Buscando ligante pepstatin_3D_minimizado...
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: pepstatin_3D_minimizado.sdf
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/pepstatin_3D_minimizado.sdf → screening_results/mapk_pepstatin_3D_minimizado/pepstatin_3D_minimizado.sdf
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_pepstatin_3D_minimizado
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: refinar_grid
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: seletividade
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: motivos
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: colorir
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: proximidade
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 📌 Adicionando passo opcional ao pipeline: limpar
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 19:22:07] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.8s
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 19:22:08] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_pepstatin_3D_minimizado/config.txt']
+[2026-01-27 19:22:08] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 19:22:08] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [grid_cego] ✅ Arquivos de saída validados
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [grid_cego] ⏱️  Tempo: 0.1s
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 19:22:08] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:10] [VirtualScreening] [INFO] [docking] ✅ Execução concluída
+[2026-01-27 19:23:10] [VirtualScreening] [INFO] [docking] ✅ Arquivos de saída validados
+[2026-01-27 19:23:10] [VirtualScreening] [INFO] [docking] ⏱️  Tempo: 1.0min
+[2026-01-27 19:23:10] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:10] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 19:23:10] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] [quimica] ✅ Execução concluída
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] [quimica] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] [plip] ✅ Execução concluída
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] [plip] ⏱️  Tempo: 0.6s
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 19:23:11] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [prolif] ✅ Execução concluída
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [prolif] ⏱️  Tempo: 0.7s
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [refinar_grid] Refina grid após blind docking para maior precisão
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [refinar_grid] ✅ Execução concluída
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [refinar_grid] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] [seletividade] Verifica seletividade da proteína contra alvos similares
+[2026-01-27 19:23:12] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [seletividade] ✅ Execução concluída
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [seletividade] ⏱️  Tempo: 0.6s
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [motivos] Busca motivos estruturais conservados na proteína
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [motivos] ✅ Execução concluída
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [motivos] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [colorir] Colore PDB por seletividade para visualização
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py", line 141, in <module>
+    structure = parser.get_structure("temp", pdb_input)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: 'screening_results/mapk_pepstatin_3D_minimizado'
+
+[2026-01-27 19:23:13] [VirtualScreening] [ERROR] [colorir] ❌ Execução falhou
+[2026-01-27 19:23:13] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: colorir
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [proximidade] Mede distâncias atômicas críticas no complexo
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [proximidade] ✅ Execução concluída
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [proximidade] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [limpar] Limpa arquivos temporários e de cache
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [limpar] ✅ Execução concluída
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [limpar] ⏱️  Tempo: 0.0s
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [refinar_grid] Refina grid após blind docking para maior precisão
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [WARNING] [refinar_grid] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/resultado_docking.pdbqt']
+[2026-01-27 19:23:13] [VirtualScreening] [ERROR] [refinar_grid] ❌ Inputs inválidos. Abortando.
+[2026-01-27 19:23:13] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: refinar_grid
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] [seletividade] Verifica seletividade da proteína contra alvos similares
+[2026-01-27 19:23:13] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [seletividade] ✅ Execução concluída
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [seletividade] ⏱️  Tempo: 0.7s
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [motivos] Busca motivos estruturais conservados na proteína
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [motivos] ✅ Execução concluída
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [motivos] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [colorir] Colore PDB por seletividade para visualização
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:14] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py", line 141, in <module>
+    structure = parser.get_structure("temp", pdb_input)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: 'screening_results/mapk_pepstatin_3D_minimizado'
+
+[2026-01-27 19:23:14] [VirtualScreening] [ERROR] [colorir] ❌ Execução falhou
+[2026-01-27 19:23:14] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: colorir
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] [proximidade] Mede distâncias atômicas críticas no complexo
+[2026-01-27 19:23:14] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [proximidade] ✅ Execução concluída
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [proximidade] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [limpar] Limpa arquivos temporários e de cache
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [limpar] ✅ Execução concluída
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [limpar] ⏱️  Tempo: 0.0s
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [refinar_grid] Refina grid após blind docking para maior precisão
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [WARNING] [refinar_grid] Arquivos de entrada ausentes: ['screening_results/mapk_pepstatin_3D_minimizado/resultado_docking.pdbqt']
+[2026-01-27 19:23:15] [VirtualScreening] [ERROR] [refinar_grid] ❌ Inputs inválidos. Abortando.
+[2026-01-27 19:23:15] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: refinar_grid
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [seletividade] Verifica seletividade da proteína contra alvos similares
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [seletividade] ✅ Execução concluída
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [seletividade] ⏱️  Tempo: 0.7s
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] [motivos] Busca motivos estruturais conservados na proteína
+[2026-01-27 19:23:15] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [motivos] ✅ Execução concluída
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [motivos] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [colorir] Colore PDB por seletividade para visualização
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [ERROR] Comando falhou: python3 /home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py screening_results/mapk_pepstatin_3D_minimizado
+Erro: Traceback (most recent call last):
+  File "/home/brilha/bioinformatica/codigos_mestres/scripts/utils/cor_pdb_seletividade.py", line 141, in <module>
+    structure = parser.get_structure("temp", pdb_input)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/PDB/PDBParser.py", line 85, in get_structure
+    with as_handle(file) as handle:
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/brilha/miniconda3/envs/bioinfo/lib/python3.11/site-packages/Bio/File.py", line 72, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: 'screening_results/mapk_pepstatin_3D_minimizado'
+
+[2026-01-27 19:23:16] [VirtualScreening] [ERROR] [colorir] ❌ Execução falhou
+[2026-01-27 19:23:16] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: colorir
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [proximidade] Mede distâncias atômicas críticas no complexo
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [proximidade] ✅ Execução concluída
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [proximidade] ⏱️  Tempo: 0.2s
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [limpar] Limpa arquivos temporários e de cache
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [limpar] ✅ Execução concluída
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] [limpar] ⏱️  Tempo: 0.0s
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ✅ Análise completada com sucesso para mapk vs pepstatin_3D_minimizado
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] 🏁 TRIAGEM FINALIZADA
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ✅ Sucesso: 3
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ❌ Falhas: 0
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ⏱️  Tempo total: 1.5min
+[2026-01-27 19:23:16] [VirtualScreening] [INFO] ======================================================================

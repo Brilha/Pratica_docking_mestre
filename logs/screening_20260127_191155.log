@@ -1,0 +1,91 @@
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 🔍 VERIFICANDO DEPENDÊNCIAS
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: vina
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: obabel
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Ferramenta encontrada: plip
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Todas as dependências validadas!
+
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 📋 Alvos disponíveis: ['mapk', 'pdrk']
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 💊 Fármacos disponíveis: ['Iprodione', 'Fludioxonil', 'pepstatin_3D_minimizado']
+
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ 1 alvo(s) SELECIONADO(S): ['mapk']
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ 1 fármaco(s) SELECIONADO(S): ['Iprodione']
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 📊 Total de combinações a executar: 1
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 📋 SCRIPTS OPCIONAIS DISPONÍVEIS
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Scripts opcionais DESATIVADOS
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] Passo 1/2: Configurando arquivos...
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] Preparando pasta para: mapk vs Iprodione
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 🔍 Buscando proteína mapk...
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Encontrado em templates/proteins: mapk.pdb
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Proteína copiada: templates/proteins/mapk.pdb → screening_results/mapk_Iprodione/mapk.pdb
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 🔍 Buscando ligante Iprodione...
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Encontrado em templates/drugs: Iprodione.sdf
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Ligante copiado: templates/drugs/Iprodione.sdf → screening_results/mapk_Iprodione/Iprodione.sdf
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ✅ Pasta preparada com sucesso: screening_results/mapk_Iprodione
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] Passo 2/2: Executando pipeline de análise...
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] [preparacao] Limpeza e conversão PDBQT
+[2026-01-27 19:11:55] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [preparacao] ✅ Execução concluída
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [preparacao] ✅ Arquivos de saída validados
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [preparacao] ⏱️  Tempo: 0.7s
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [gridbox] Calculando coordenadas do sítio ativo
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [gridbox] ✅ Execução concluída
+[2026-01-27 19:11:56] [VirtualScreening] [ERROR] [gridbox] Arquivos de saída não foram criados: ['screening_results/mapk_Iprodione/config.txt']
+[2026-01-27 19:11:56] [VirtualScreening] [ERROR] [gridbox] ❌ Validação de saída falhou
+[2026-01-27 19:11:56] [VirtualScreening] [ERROR] ❌ Pipeline falhou no passo: gridbox
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [grid_cego] Blind docking - cobre proteína toda (fallback se gridbox falhar)
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [grid_cego] ✅ Execução concluída
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [grid_cego] ✅ Arquivos de saída validados
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [grid_cego] ⏱️  Tempo: 0.1s
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] [docking] Simulação de encaixe molecular (Vina)
+[2026-01-27 19:11:56] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:12:03] [VirtualScreening] [INFO] [docking] ✅ Execução concluída
+[2026-01-27 19:12:03] [VirtualScreening] [INFO] [docking] ✅ Arquivos de saída validados
+[2026-01-27 19:12:03] [VirtualScreening] [INFO] [docking] ⏱️  Tempo: 7.0s
+[2026-01-27 19:12:03] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:12:03] [VirtualScreening] [INFO] [quimica] Avaliação de propriedades de fármaco
+[2026-01-27 19:12:03] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] [quimica] ✅ Execução concluída
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] [quimica] ⏱️  Tempo: 0.3s
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] [plip] Mapeamento de interações atômicas (PLIP)
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] [plip] ✅ Execução concluída
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] [plip] ⏱️  Tempo: 0.7s
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] [prolif] Diagrama interativo ProLIF
+[2026-01-27 19:12:04] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] [prolif] ✅ Execução concluída
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] [prolif] ⏱️  Tempo: 1.2s
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] [relatorio] Compilação do relatório final
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] [relatorio] ✅ Execução concluída
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] [relatorio] ✅ Arquivos de saída validados
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] [relatorio] ⏱️  Tempo: 0.2s
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] 
+======================================================================
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] 🏁 TRIAGEM FINALIZADA
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] ======================================================================
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] ✅ Sucesso: 0
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] ❌ Falhas: 1
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] ⏱️  Tempo total: 10.3s
+[2026-01-27 19:12:06] [VirtualScreening] [INFO] ======================================================================
