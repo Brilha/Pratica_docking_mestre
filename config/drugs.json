@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "description": "Drug ligand definitions with template file paths",
+    "base_path": "../templates/drugs",
+    "created": "2026-01-27"
+  },
+  "drugs": {
+    "Iprodione": {
+      "name": "Iprodione",
+      "iupac_name": "3-(3,5-Dichlorophenyl)-N-(1-methylethyl)-2,4-dioxo-1-imidazolidinecarboxamide",
+      "cas_number": "36734-19-7",
+      "sdf_file": "../templates/drugs/Iprodione.sdf",
+      "format": "3D",
+      "source": "local",
+      "pubchem_cid": "86481",
+      "description": "Fungicide - dicarboximide class",
+      "notes": "3D conformer available locally"
+    },
+    "Fludioxonil": {
+      "name": "Fludioxonil",
+      "iupac_name": "4-(2,2-Difluoro-1,3-benzodioxol-4-yl)pyrrole",
+      "cas_number": "131341-86-1",
+      "sdf_file": "../templates/drugs/Fludioxonil.sdf",
+      "format": "3D",
+      "source": "local",
+      "pubchem_cid": "108199",
+      "description": "Fungicide - phenylpyrrole class",
+      "notes": "3D conformer available locally"
+    },
+    "pepstatin_2D": {
+      "name": "Pepstatin A (2D)",
+      "iupac_name": "Pepstatin A",
+      "sdf_file": "../templates/drugs/pepstatin_2D.sdf",
+      "format": "2D",
+      "source": "local",
+      "description": "Protease inhibitor (2D structure for conversion)",
+      "notes": "2D - requires 3D conversion before docking"
+    },
+    "pepstatin_3D_minimizado": {
+      "name": "Pepstatin A (3D Minimized)",
+      "iupac_name": "Pepstatin A",
+      "sdf_file": "../templates/drugs/pepstatin_3D_minimizado.sdf",
+      "format": "3D",
+      "source": "local",
+      "pubchem_cid": "23676",
+      "description": "Protease inhibitor (minimized 3D structure)",
+      "notes": "Ready for docking - energy minimized"
+    }
+  },
+  "default_drugs": ["Iprodione", "Fludioxonil", "pepstatin_3D_minimizado"],
+  "search_behavior": {
+    "local_priority": true,
+    "description": "Se arquivo local existir em templates/drugs/, será usado. Caso contrário, tenta download de PubChem.",
+    "fallback_to_online": true,
+    "conversion_needed": {
+      "pepstatin_2D": "Use preparar_ligante_3d.py para converter para 3D"
+    }
+  }
+}

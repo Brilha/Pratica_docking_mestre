@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "description": "Target protein definitions with template file paths",
+    "base_path": "../templates/proteins",
+    "created": "2026-01-27"
+  },
+  "targets": {
+    "mapk": {
+      "name": "MAPK",
+      "description": "Mitogen-Activated Protein Kinase",
+      "pdb_file": "../templates/proteins/mapk.pdb",
+      "pdb_code": "mapk",
+      "source": "local",
+      "species": "Homo sapiens",
+      "notes": "Local template - prioritized over RCSB download"
+    },
+    "pdrk": {
+      "name": "PDRK",
+      "description": "Protein kinase (local template)",
+      "pdb_file": "../templates/proteins/pdrk.pdb",
+      "pdb_code": "pdrk",
+      "source": "local",
+      "notes": "Local template - prioritized over RCSB download"
+    },
+    "pdrk_hcapsulatum": {
+      "name": "PDRK (Helianthus capsulatum)",
+      "description": "Plant protein kinase",
+      "pdb_file": "../templates/proteins/pdrk_hcapsulatum.pdb",
+      "pdb_code": "pdrk_hcapsulatum",
+      "source": "local",
+      "species": "Helianthus capsulatum",
+      "notes": "Local template"
+    },
+    "ctr3": {
+      "name": "CTR3",
+      "description": "Control target 3",
+      "pdb_file": "../templates/proteins/ctr3.pdb",
+      "pdb_code": "ctr3",
+      "source": "local",
+      "notes": "Control protein - use for testing"
+    }
+  },
+  "default_targets": ["mapk", "pdrk"],
+  "search_behavior": {
+    "local_priority": true,
+    "description": "Se arquivo local existir em templates/proteins/, será usado. Caso contrário, tenta download de RCSB.",
+    "fallback_to_online": true
+  }
+}
